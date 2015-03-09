@@ -1,3 +1,3 @@
-(function($){
-  console.log('yo');
-}(jQuery));
+$(document).ready(function(){
+  Users.getUsers();
+});
