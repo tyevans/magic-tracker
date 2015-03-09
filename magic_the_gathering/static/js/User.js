@@ -1,4 +1,4 @@
-var Users = Users || (function($){
+var User = User || (function($){
   function getUsers(){
     $.ajax({
       url: '/api/users/',
@@ -10,7 +10,7 @@ var Users = Users || (function($){
   }
 
   function initUsers(data){
-    Users.data = data;
+    User.data = data;
     $('[data-user-list]').html(function(){
       var html = "";
       $.each(data, function(index, user){

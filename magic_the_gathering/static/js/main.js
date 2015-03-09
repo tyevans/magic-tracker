@@ -1,3 +1,4 @@
 $(document).ready(function(){
-  Users.getUsers();
+  User.getUsers();
+  Match.getMatches();
 });
