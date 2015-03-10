@@ -7,11 +7,19 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
 </header>
 <body>
-  <ul data-user-list></ul>
-  <ul data-match-list></ul>
-  <script src="{% static "js/jquery.min.js" %}"></script>
-  <script src="{% static "js/User.js" %}"></script>
-  <script src="{% static "js/Match.js" %}"></script>
-  <script src="{% static "js/main.js" %}"></script>
+  <div class="container">
+    <div class="row">
+      <div class="col-6-sm col-12-xs">
+        <h2>Players</h2>
+        <ul class="list-group" data-user-list></ul>
+      </div>
+      <div class="col-6-sm col-12-xs">
+        <h2>Games</h2>
+        <ul class="list-group" data-match-list></ul>
+      </div>
+    </div>
+  </div>
+  <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+  <script src="{% static "js/build/script.js" %}"></script>
 </body>  
 </html>
