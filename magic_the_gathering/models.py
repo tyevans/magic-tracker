@@ -5,6 +5,7 @@ from django.contrib.auth.models import User
 
 class Match(models.Model):
     played_on = models.DateTimeField()
+    winner = models.ForeignKey("Player", null=True, blank=False)
 
     class Meta:
         ordering = ['-played_on']
@@ -14,14 +15,15 @@ class Match(models.Model):
         winner = self.results.first()
         if winner:
             name = "{} ({})".format(
-               self.played_on.strftime("%Y-%m-%d %H:%M:%S"),
-               winner.player.username
+                self.played_on.strftime("%Y-%m-%d %H:%M:%S"),
+                winner.player.username
             )
         else:
             name = "{}".format(
-               self.played_on.strftime("%Y-%m-%d %H:%M:%S"),
+                self.played_on.strftime("%Y-%m-%d %H:%M:%S"),
             )
         return name
+
 
 class MatchResult(models.Model):
     match = models.ForeignKey(Match, related_name='results')
@@ -32,12 +34,10 @@ class MatchResult(models.Model):
         ordering = ['result']
         verbose_name_plural = "Results"
 
+
 class Player(User):
     class Meta:
         proxy = True
 
-    # def number_of_wins(self):
-    #     Match.objects.filter():
-
-
-        
+        # def number_of_wins(self):
+        # Match.objects.filter():

@@ -10,7 +10,7 @@ class MatchResultInline(SortableTabularInline):
 
 
 class MatchAdmin(admin.ModelAdmin):
-    fields = ["played_on"]
+    fields = ["played_on", "winner"]
     inlines = [MatchResultInline]
 
 
