@@ -1,11 +1,13 @@
 from django.conf import settings
 from django.db import models
+from django.contrib.auth.models import User
 
 
 class Match(models.Model):
     played_on = models.DateTimeField()
 
     class Meta:
+        ordering = ['-played_on']
         verbose_name_plural = "Matches"
 
     def __str__(self):
@@ -29,3 +31,13 @@ class MatchResult(models.Model):
     class Meta:
         ordering = ['result']
         verbose_name_plural = "Results"
+
+class Player(User):
+    class Meta:
+        proxy = True
+
+    # def number_of_wins(self):
+    #     Match.objects.filter():
+
+
+        

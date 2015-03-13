@@ -1,9 +1,9 @@
-from django.contrib.auth.models import User
 from rest_framework import viewsets
 
-from magic_the_gathering.api.serializers.user import UserSerializer
+from magic_the_gathering.api.serializers.user import PlayerSerializer
+from magic_the_gathering.models import Player
 
 
-class UserViewSet(viewsets.ModelViewSet):
-    queryset = User.objects.all()
-    serializer_class = UserSerializer
+class PlayerViewSet(viewsets.ModelViewSet):
+    queryset = Player.objects.all()
+    serializer_class = PlayerSerializer

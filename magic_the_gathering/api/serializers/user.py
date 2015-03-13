@@ -1,7 +1,7 @@
-from django.contrib.auth.models import User
 from rest_framework import serializers
+from magic_the_gathering.models import Player
 
-class UserSerializer(serializers.HyperlinkedModelSerializer):
+class PlayerSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
-        model = User
+        model = Player
         fields = ('url', 'id', 'username', 'is_staff', 'first_name', 'last_name')

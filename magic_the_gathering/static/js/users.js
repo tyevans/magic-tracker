@@ -1,5 +1,3 @@
-
-
 module.exports = {
   updateUsers: function(){
     var data = window.appData.users;

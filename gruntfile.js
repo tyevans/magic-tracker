@@ -1,5 +1,15 @@
 module.exports = function(grunt){
   grunt.initConfig({
+    // "babel": {
+    //   options: {
+    //     sourceMap: true
+    //   },
+    //   dist: {
+    //     files: {
+    //       "magic_the_gathering/static/js/es6/*.es6": "src/app.js"
+    //     }
+    //   }
+    // },
     browserify: {
       dev: {
         src: ['magic_the_gathering/static/js/*.js'],
