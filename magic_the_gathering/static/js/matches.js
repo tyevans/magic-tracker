@@ -1,5 +1,7 @@
 var users = require('./users.js');
 
+window.appData.userMatchInfo = [];
+
 module.exports = {
   updateMatches: function(){
     var data = window.appData.matches;
@@ -18,12 +20,25 @@ function getMatchPlayers(match){
   var players = [];
   
   $.each(match.results, function(index, result){
+    var user;
+
+    if(!window.appData.userMatchInfo[result.player]){
+      window.appData.userMatchInfo[result.player] = {'wins':0,'matches':0};
+    }
+
+    user = window.appData.userMatchInfo[result.player];
+
+    if(index === 0) user.wins++;
+
+    user.matches++;
+
     var name = users.getPlayerName(result.player);
     if(index === 0){
-      players.push( '<b>' + name + '</b>'); 
+      players.push( '<b>' + name  + '</b>'); 
     }else{
       players.push( name ); 
     }
   });
+
   return players.join(' vs. ');
 }

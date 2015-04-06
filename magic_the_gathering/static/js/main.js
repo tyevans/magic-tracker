@@ -15,6 +15,9 @@ Object.observe(window.appData, function(){
 
 function updateState(){
   var data = window.appData
+  if(data.matches) {
+    matches.updateMatches();    
+  }
   if(data.users) users.updateUsers();
-  if(data.matches) matches.updateMatches();
 }
+
