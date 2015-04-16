@@ -40,5 +40,8 @@ class Player(User):
     class Meta:
         proxy = True
 
-        # def number_of_wins(self):
-        # Match.objects.filter():
+    def number_of_wins(self):
+        return Match.objects.filter(winner = self).count()
+
+    def number_of_macthes(self):
+        pass
