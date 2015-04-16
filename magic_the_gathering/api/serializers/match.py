@@ -6,7 +6,7 @@ from magic_the_gathering.models import Match, MatchResult
 class MatchResultSerializer(serializers.ModelSerializer):
     class Meta:
         model = MatchResult
-        fields = ('player', 'result')
+        fields = ('player', 'result', 'season')
 
 class MatchSerializer(serializers.HyperlinkedModelSerializer):
     results = MatchResultSerializer(many=True)

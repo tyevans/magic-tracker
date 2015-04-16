@@ -6,6 +6,7 @@ from django.contrib.auth.models import User
 class Match(models.Model):
     played_on = models.DateTimeField()
     winner = models.ForeignKey("Player", null=True, blank=False)
+    season = models.PositiveIntegerField(default=1)
 
     class Meta:
         ordering = ['-played_on']
